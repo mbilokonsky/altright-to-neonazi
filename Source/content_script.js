@@ -22,14 +22,14 @@ function handleText(textNode) {
 function replaceText(v)
 {
 
-    // handle various spellings
+    // normalize
     v = v.replace(/[A|a]lt(-|\s)?[R|r]ight/, 'alt-right');
 
     // as a group
-    v = v.replace(/the alt-right/, 'the neo-nazi movement');
+    v = v.replace(/([T|t])he ('|")?alt-right('|")?/, '$1he Neo-Nazi movement');
 
     // as an adjective
-    v = v.replace(/alt-right/, 'neo-nazi');
+    v = v.replace(/alt-right/, 'Neo-Nazi');
 
     return v;
 }
